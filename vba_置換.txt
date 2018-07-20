@@ -1,0 +1,68 @@
+Sub Sample1()
+ 
+ '宿題　シートでまわす
+ 
+ 
+  For i = 10 To 200
+   
+    
+    Cells(i, 3) = LCase(Cells(i, 3))
+   
+   
+    Range("B:B").ColumnWidth = 31
+   
+  Next i
+  
+  
+    '幅
+    Range("B:B").ColumnWidth = 31
+   
+ 
+End Sub
+
+
+2
+Sub macro6()
+    Dim myRange As Range
+    Dim keyWord1 As String, keyWord2 As String
+    Dim bool As Boolean
+     
+    Set myRange = Range("B2:B5")
+    keyWord1 = "エンジニア"
+    keyWord2 = "engineer"
+    bool = myRange.Replace(keyWord1, keyWord2, LookAt:=xlWhole)
+End Sub
+
+
+Sub macro8()
+    Dim myRange As Range
+    Dim keyWord1 As String, keyWord2 As String
+    Dim bool As Boolean
+     
+    Set myRange = Range("B2:B5")
+    keyWord1 = "侍*" 'ワイルドカードを使用
+    keyWord2 = "Samurai"
+    bool = myRange.Replace(keyWord1, keyWord2, LookAt:=xlWhole)
+End Sub
+
+
+
+
+'複数の条件を指定する
+
+Sub macro9()
+   'Dictionaryオブジェクトの宣言
+    Dim myDic As Object
+    Set myDic = CreateObject("Scripting.Dictionary")
+    
+    'Dictionaryオブジェクトの初期化、要素の追加
+    myDic.Add "侍", "Samurai"
+    myDic.Add "エンジニア", "Engineer"
+    
+    'Dictionaryオブジェクトを使った複数条件の置換
+    Dim bool As Boolean, myRange As Range
+    Set myRange = Range("B2:B5")
+    For Each Var In myDic
+        bool = myRange.Replace(Var, myDic(Var), LookAt:=xlPart)
+    Next Var
+End Sub
