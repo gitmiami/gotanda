@@ -1,0 +1,79 @@
+checkboxのチェックされた値を取得
+
+■checkboxのname属性がすべて同じ場合
+　　 鳥取県　 岡山県　 島根県　 広島県　 山口県
+　
+
+■checkboxのname属性が連番付きの場合
+　　 鳥取県　 岡山県　 島根県　 広島県　 山口県
+　
+
+■checkboxのname属性がすべて異なる場合
+　　 鳥取県　 岡山県　 島根県　 広島県　 山口県
+　
+
+    name属性がすべて同じ場合･･･forループ文を使いname名[index番号]を繰り返し、checkedﾌﾟﾛﾊﾟﾃｨを調べる。
+    name属性が連番付きの場合･･･forループ分を使い連番を繰り返し、checkedﾌﾟﾛﾊﾟﾃｨを調べる。ただし、eval()関数を使いcheckboxｵﾌﾞｼﾞｪｸﾄを生成する必要がある。
+    name属性がすべて異なる場合･･･if文を使い全てのcheckboxのcheckedﾌﾟﾛﾊﾟﾃｨを個別に調べる。
+
+<SCRIPT language="JavaScript"><!--
+function CheckVakue(n){
+  num = 0;    //ﾁｪｯｸされている項目数
+  chkvalue = "";    //ﾁｪｯｸされている項目値
+  if(n==1){    //checkboxのname属性がすべて同じ場合
+    for(i=0 ; i<document.form1.ken.length ; i++){
+      if(document.form1.ken[i].checked)    {
+        chkvalue += "\n\t" + document.form1.ken[i].value;
+        num++; 
+      }
+    }
+  }
+  if(n==2){    //checkboxのname属性が連番付きの場合
+    for(i=1 ; i<=5 ; i++){    //"ken"に1～5の連番付き
+      obj = eval("document.form1.ken" + i);  //checkboxｵﾌﾞｼﾞｪｸﾄを生成する
+      if(obj.checked)    {
+        chkvalue += "\n\t" + obj.value;
+        num++;
+      }
+    }
+  }
+  if(n==3){    //checkboxのname属性がすべて異なる場合
+    if(document.form1.tot.checked){chkvalue += "\n\t"+ document.form1.tot.value;num++;}
+    if(document.form1.oka.checked){chkvalue += "\n\t"+ document.form1.oka.value;num++;}
+    if(document.form1.sim.checked){chkvalue += "\n\t"+ document.form1.sim.value;num++;}
+    if(document.form1.hir.checked){chkvalue += "\n\t"+ document.form1.hir.value;num++;}
+    if(document.form1.yam.checked){chkvalue += "\n\t"+ document.form1.yam.value;num++;}
+  }
+  if(num == 0)alert("どの項目もチェックされていません！");
+  else alert(num+"項目がチェックされ、その値は"+chkvalue);
+}
+//--></SCRIPT>
+</head>
+
+<body>
+<form name="form1">
+■checkboxのname属性がすべて同じ場合 <br>   　　 
+    <input type="checkbox" name="ken" value="鳥取県">鳥取県　 
+    <input type="checkbox" name="ken" value="岡山県">岡山県　 
+    <input type="checkbox" name="ken" value="島根県">島根県　 
+    <input type="checkbox" name="ken" value="広島県">広島県　 
+    <input type="checkbox" name="ken" value="山口県">山口県<br>    　
+  <input type="button" name="bt1" value="チェックされた値を表示" onclick="CheckVakue(1);">
+■checkboxのname属性が連番付きの場合<br>   　　 
+    <input type="checkbox" name="ken1" value="鳥取県">鳥取県　 
+    <input type="checkbox" name="ken2" value="岡山県">岡山県　 
+    <input type="checkbox" name="ken3" value="島根県">島根県　 
+    <input type="checkbox" name="ken4" value="広島県">広島県　 
+    <input type="checkbox" name="ken5" value="山口県">山口県 <br>   　
+  <input type="button" name="bt2" value="チェックされた値を表示" onclick="CheckVakue(2);">
+■checkboxのname属性がすべて異なる場合<br>   　　 
+    <input type="checkbox" name="tot" value="鳥取県">鳥取県　 
+    <input type="checkbox" name="oka" value="岡山県">岡山県　 
+    <input type="checkbox" name="sim" value="島根県">島根県　 
+    <input type="checkbox" name="hir" value="広島県">広島県　 
+    <input type="checkbox" name="yam" value="山口県">山口県 <br>
+  <input type="button" name="bt3" value="チェックされた値を表示" onclick="CheckVakue(3);">
+</form>
+
+end(01/9/1)
+

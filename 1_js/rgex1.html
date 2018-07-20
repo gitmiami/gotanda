@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+	<title>ttt</title>
+
+	<script type="text/javascript">
+
+
+		//------------------------------------------------------
+		str = "ABCDEF";
+		
+		re = new RegExp("DEF", "i");
+		if (str.match(re)) {
+		  alert("DEFを含んでいます__222。");
+		}
+		
+		//------------------------------------------------------
+		//2番目同じ書き方
+		if (str.match(/DEF/i)) {
+		  alert("DEFを含んでいます。");
+		}
+
+		//------------------------------------------------------
+		str2 = "12:34:56";
+		if (str2.match(/^[0-9][0-9]:[0-9][0-9]:[0-9][0-9]$/)) {
+		  alert("マッチしました。str2");
+		}	
+		
+						//m を指定すると、行頭（^）や行末（$）のマッチングが文字列の先頭・末尾だけではなく、
+		//各行の行頭・行末にもマッチするようになります。Internet Explorer 5.5（?）、
+		//------------------------------------------------------			
+		str3 = "123\n456\n789";                           // \n は改行
+		if (str3.match(/^456/)) { alert("マッチ!!str3_1"); }    // マッチしない
+		//↓これダメ
+		//if (str3.match(/^456/m)) { alert("マッチ!!"str3_2); }   // マッチする								
+
+
+
+	</script>
+
+</head>
+<body>
+
+
+
+
+</body>
+</html>

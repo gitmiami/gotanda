@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				$("div").click(function(){
+					alert(this.id);
+				});
+			});
+		</script>
+		
+		<style type="text/css">
+		<!--
+			div{
+				width:100px;
+				margin:10px;
+				padding:5px;
+				color:#fff;
+				background-color:#09C;
+			}
+		-->
+		</style>
+	</head>
+
+	<body>
+		<div id="1">click me.</div>
+		<div id="2">click me.</div>
+		<div id="3">click me.</div>
+		<div id="4">click me.</div>
+		<div id="5">click me.</div>
+	</body>
+</html>

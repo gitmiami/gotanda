@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Test</title>
+<script type="text/javascript">
+	function insertString() {
+		//挿入する文字列
+		var strInsert = "test data";
+
+		//現在のテキストエリアの文字列
+		var strOriginal = document.getElementById('txtarea').value;
+
+		//現在のカーソル位置
+		var posCursole = document.getElementById('txtarea').selectionStart;
+		
+		//カーソル位置より左の文字列
+		var leftPart = strOriginal.substr(0, posCursole);
+		
+		//カーソル位置より右の文字列
+		var rightPart = strOriginal.substr(posCursole, strOriginal.length);
+
+		//文字列を結合して、テキストエリアに出力
+		document.getElementById('txtarea').value = leftPart + strInsert + rightPart;
+	}
+</script>
+
+
+</head>
+<body>
+	<textarea id="txtarea" cols="50" rows="10">あいうえお</textarea>
+	<button onclick="insertString()">test dataを挿入</button>
+</body>
+</html>

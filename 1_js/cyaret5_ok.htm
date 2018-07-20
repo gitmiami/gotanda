@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>aaaaaaa</title>
+
+<meta charset="utf-8">
+
+<script>
+
+function setCursor(){
+  var obj = document.getElementById("txt1");
+  var val = document.getElementById("txt2").value;
+
+  obj.focus();
+  obj.setSelectionRange(val, val);
+  
+  
+  
+}
+  
+// =============================================
+// 選択テキストをタグで囲む、またはキャレット位置に空のまま挿入する
+// =============================================
+  function setCursor2(){
+ 
+	var tag = new Array('<b>','</b>');
+	
+  var field = document.getElementById("textarea").value;
+  
+  // テキストエリア
+	
+  // 選択テキストの開始インデックス（キャレット位置）
+  var start = field.selectionStart;
+
+  // 選択テキストの終了位置
+  var end = field.selectionEnd;
+
+  // 選択テキストの長さ
+  var selected = end - start;
+
+  // 選択テキスト
+  var target = selected ? field.value.substr(start, selected) : '';
+
+  // 選択中のテキストを '<b>' で囲む
+  field.value = field.value.substr(0, start) + tag[0] + target + tag[1] + field.value.substr(end, field.value.length);
+
+  // '<b>?</b>'の部分を選択状態にする
+  field.focus();
+  field.setSelectionRange(start, (start + tag[0].length + selected + tag[1].length) );
+  
+  
+}
+  
+</script>
+</head>
+
+<body>
+  <input type="text" id="txt1" value="1234567890"><p>
+  <input type="text" id="txt2"><p>
+
+	<textarea id="textarea" rows="10" cols="40">
+	  あいうえおかきくけこ
+	  さしすせぽ
+	  えこかき
+	</textarea>
+
+  <input type="button" value="button" onclick="setCursor();">
+  <input type="button" value="button2" onclick="setCursor2();">
+
+
+</body>
+</html>
