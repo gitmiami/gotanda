@@ -1,0 +1,6 @@
+
+set jspDirmoto=c:\abc\moto
+
+xcopy /y /r /e %jspDirmoto%\abc.java %jspfolder%\
+
+
