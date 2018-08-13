@@ -1,0 +1,111 @@
+-------vba*------------------------------------------
+
+
+strR = k & ":" & addGyo
+
+ActiveSheet.Rows(strR).select
+
+Selection.Insert shit:=xlDwon
+
+
+
+
+
+=IF(A7=A8,"","NG")
+
+
+
+
+
+<正規表現>
+--------------------------------------------------------------------
+
+空白行
+
+^\s*$
+
+bookにマッチ
+\bbook\b
+
+
+mac を含むマッチ
+\Bmac\B
+
+
+行が変わったら
+色を変える
+
+
+\Aabc
+はじめのabcにマッチ
+
+abc abc
+
+
+(\"(.*?)\")
+
+"neko" "dog" "kaba
+
+
+
+
+
+	Matcher nameMatches = Pattern.compile("^name=([a-zA-Z0-9\\w_]+?)$").matcher(webeditorpart);
+	Matcher valueIdMatches = Pattern.compile("^value=([0-9]+?)$").matcher(webeditorpart);
+	Matcher valueMatches = Pattern.compile("^value=\"(.*?)\"$").matcher(webeditorpart);
+	Matcher widthMatches = Pattern.compile("^width=([0-9]+%?)$").matcher(webeditorpart);
+	Matcher heightMatches = Pattern.compile("^height=([0-9]+%?)$").matcher(webeditorpart);
+	Matcher managerNoMatches = Pattern.compile("^manager=(no|off)$").matcher(webeditorpart);
+	Matcher managerYesMatches = Pattern.compile("^manager=(yes|wcm)$").matcher(webeditorpart);
+	Matcher managerMatches = Pattern.compile("^manager=(.+?)$").matcher(webeditorpart);
+	Matcher stylesheetDefaultMatches = Pattern.compile("^stylesheet=(default)$").matcher(webeditorpart);
+	Matcher stylesheetMatches = Pattern.compile("^stylesheet=([0-9]+?)$").matcher(webeditorpart);
+
+
+
+
+
+(^| )([a-zA-Z0-9]+)=((\"(.*?)\")|([a-zA-Z0-9]+))
+
+
+
+
+{n}
+直前の表現をn回繰り返す。nは整数
+
+neko{3}
+(neko){3}
+
+
+neko neko neko
+neko
+nekonekoneko
+nekooo
+
+nekoznekoneko
+
+
+
+nekozdogdogneko
+(neko)(dog)z(\2)(\1)
+
+
+------------------------------------------------------------------------------------------------
+
+
+# 条件式スクリプトを直接指定
+-e 'スクリプト'
+
+# 条件式スクリプトが記述されているファイルを指定
+-f 'スクリプトファイル名'
+
+# 表示を抑制（明示的にスクリプト中でpをすれば表示も可能）
+-n 'スクリプト'
+
+# 拡張正規表現を使ったスクリプトを記述
+-r '正規表現を使ったスクリプト'
+
+-i 入力ファイルの上書き
+
+# 上書き前のファイルに拡張子.bakをつけて保管することもできる
+sed -i.bak -e '/^#/d' config.txt
