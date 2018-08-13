@@ -1,0 +1,43 @@
+'##########################################
+'できる マージ　 p290    シート：できる_マージwhile
+'##########################################
+    
+Sub hina_できる5()
+   
+   Dim i As Integer
+   Dim j As Integer
+   
+   Application.DisplayAlerts = False
+   
+   i = 1
+   
+   Do While Cells(i + 1, 1).Value <> ""
+   
+    j = 1
+    
+     Do While Cells(i + 1, 1).Value = Cells(i + 1 + j, 1).Value
+         
+         Range(Cells(i + 1, 1), Cells(i + 1 + j, 1)).Merge
+         j = j + 1
+    Loop
+    
+      i = i + j
+   
+   Loop
+      
+   Application.DisplayAlerts = True
+   
+   
+End Sub
+
+
+
+
+    Dim bool As Boolean, myRange As Range
+    Set myRange = Range("B2:B5")
+    For Each Var In myDic
+        bool = myRange.Replace(Var, myDic(Var), LookAt:=xlPart)
+    Next Var
+    
+    
+    
