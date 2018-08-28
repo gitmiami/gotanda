@@ -1,0 +1,19 @@
+select t.店舗コード, t.店舗名
+?????
+from 店舗表 t, 会計表 k
+where t.店舗コード, k.店舗コード,
+k.来店日 between '20120808' and '20120812'
+group by t.店舗コード, t.店舗名
+
+
+
+
+
+
+
+sum(k.goukeikingaku),
+count(k.kaikei_id),
+avg(k.goukeikingaku)
+
+
+
