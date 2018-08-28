@@ -1,0 +1,44 @@
+<%@page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+
+<%@page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+	
+	
+	out.println("★strKey : " + strKey);
+	out.println("<br>");
+	out.print("▲strKey encoded  =    " + URLEncoder.encode(strKey));
+	out.println("<br>");
+	
+	
+	
+	C:\workspace\src_test\.metadata\.plugins\org.eclipse.wst.server.core\tmp28\wtpwebapps\prto3\regex\doc
+	
+	
+	
+	String GetItem = new String (request.getParameter("item").getBytes("ISO-8859-1"));
+	out.println("ISO-8859-1でエンコード："URLDecoder.decode(GetItem,"UTF-8"));
+
+
+
+
+			out.print("&keywd=" + URLEncoder.encode(strKey) + "'>");
+			
+			
+			
+			strDoc="C:\\workspace\\src_test\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp28\\wtpwebapps\\prto3\\" + strDoc;
+			
+			<meta http-equiv="Content-Type" content="text/html; charset=windows-31j">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+UTF-8
+			
+			windows-31j
+			
+			shift_jis
+			
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<%@ page contentType="text/html;charset=Shift_JIS" import="java.io.*" %>
+
